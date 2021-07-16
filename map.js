@@ -52,3 +52,29 @@ const students = [
 
 const studentsWithIds = students.map(student => [student.name, student.id]);
 console.log(studentsWithIds);
+
+// Return the same as above as objects with the ID and Name still in tact.
+const studentsWithIdsAsObj = students.map(function (student) {
+  newObj = {"id":student.id, "name":student.name}
+  return newObj;
+});
+console.log(studentsWithIdsAsObj);
+
+
+// Return identical array but where students have an age as well.
+// 32, 26, 28
+const newAges = students.map(function (student) {
+  switch (student.name) {
+    case "Mark": 
+      student.age = 32;
+      break;
+    case "Ariel": 
+      student.age = 26;
+      break;
+    case "Jason": 
+      student.age = 28;
+      break;
+  }
+  return student;
+});
+console.log(newAges);
